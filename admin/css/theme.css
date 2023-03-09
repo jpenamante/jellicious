@@ -1040,10 +1040,10 @@ border-top-left-radius: 3px;
 .module-body.table {
 	padding: 15px 0
 }
-.module-body.table .table th, .module-body.table .table td {
+/* .module-body.table .table th, .module-body.table .table td {
 	padding-left: 15px;
 	padding-right: 15px
-}
+} */
 .module-foot {
 	background: #f9f9f9;
 	border-top: 1px solid #ddd;

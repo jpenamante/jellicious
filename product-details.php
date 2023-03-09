@@ -565,7 +565,7 @@ while($rw=mysqli_fetch_array($qry))
                                     <a href="product-details.php?pid=<?php echo htmlentities($rw['id']);?>"><img
                                             src="assets/images/blank.gif"
                                             data-echo="admin/productimages/<?php echo htmlentities($rw['id']);?>/<?php echo htmlentities($rw['productImage1']);?>"
-                                            width="150" height="240" alt=""></a>
+                                            height="240" alt=""></a>
                                 </div><!-- /.image -->
 
 
