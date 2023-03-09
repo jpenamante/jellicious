@@ -134,8 +134,7 @@ while($row=mysqli_fetch_array($query))
                                                         <label class="info-title" for="Billing Address">Billing
                                                             Address<span>*</span></label>
                                                         <textarea
-                                                            class="form-control unicase-form-control text-input" " name="
-                                                            billingaddress"
+                                                            class="form-control unicase-form-control text-input" " name="billingaddress"
                                                             required="required"><?php echo $row['billingAddress'];?></textarea>
                                                     </div>
 
@@ -205,8 +204,7 @@ while($row=mysqli_fetch_array($query))
                                             <div class="form-group">
                                                 <label class="info-title" for="Shipping Address">Shipping
                                                     Address<span>*</span></label>
-                                                <textarea class="form-control unicase-form-control text-input" " name="
-                                                    shippingaddress"
+                                                <textarea class="form-control unicase-form-control text-input" " name="shippingaddress"
                                                     required="required"><?php echo $row['shippingAddress'];?></textarea>
                                             </div>
 

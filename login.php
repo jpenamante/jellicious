@@ -24,33 +24,45 @@ if (isset($_POST['login']))
 {
     $email = $_POST['email'];
     $password = md5($_POST['password']);
-    $query = mysqli_query($con, "SELECT * FROM users WHERE email='$email' and password='$password' and verify=1");
+    $query = mysqli_query($con, "SELECT * FROM users WHERE email='$email' and password='$password'");
     $num = mysqli_fetch_array($query);
     if ($num > 0)
     {
-        $extra = "index.php";
-        $_SESSION['login'] = $_POST['email'];
-        $_SESSION['id'] = $num['id'];
-        $_SESSION['username'] = $num['name'];
-        $uip = $_SERVER['REMOTE_ADDR'];
-        $status = 1;
-        $log = mysqli_query($con, "insert into userlog(userEmail,userip,status) values('" . $_SESSION['login'] . "','$uip','$status')");
-        $host = $_SERVER['HTTP_HOST'];
-        $uri = rtrim(dirname($_SERVER['PHP_SELF']) , '/\\');
-        header("location:http://$host$uri/$extra");
-        exit();
+        
+        $query = mysqli_query($con, "SELECT * FROM users WHERE email='$email' and password='$password' and verify=1");
+        $num = mysqli_fetch_array($query);
+        if ($num > 0) {
+            $extra = "index.php";
+            $_SESSION['login'] = $_POST['email'];
+            $_SESSION['id'] = $num['id'];
+            $_SESSION['username'] = $num['name'];
+            $uip = $_SERVER['REMOTE_ADDR'];
+            $status = 1;
+            $log = mysqli_query($con, "insert into userlog(userEmail,userip,status) values('" . $_SESSION['login'] . "','$uip','$status')");
+            $host = $_SERVER['HTTP_HOST'];
+            $uri = rtrim(dirname($_SERVER['PHP_SELF']) , '/\\');
+            header("location:http://$host$uri/$extra");
+            exit();
+        } else {
+            $extra = "login.php";
+            $email = $_POST['email'];
+            $uip = $_SERVER['REMOTE_ADDR'];
+            $status = 0;
+            $log = mysqli_query($con, "insert into userlog(userEmail,userip,status) values('$email','$uip','$status')");
+            $host = $_SERVER['HTTP_HOST'];
+            $uri = rtrim(dirname($_SERVER['PHP_SELF']) , '/\\');
+            header("location:http://$host$uri/$extra");
+            $_SESSION['errmsg'] = "Your Account is not Verified";
+            exit();
+        }
     }
     else
     {
         $extra = "login.php";
-        $email = $_POST['email'];
-        $uip = $_SERVER['REMOTE_ADDR'];
-        $status = 0;
-        $log = mysqli_query($con, "insert into userlog(userEmail,userip,status) values('$email','$uip','$status')");
         $host = $_SERVER['HTTP_HOST'];
         $uri = rtrim(dirname($_SERVER['PHP_SELF']) , '/\\');
         header("location:http://$host$uri/$extra");
-        $_SESSION['errmsg'] = "Your Account is not Verified";
+        $_SESSION['errmsg'] = "Account not exist";
         exit();
     }
 }
@@ -155,12 +167,12 @@ if (isset($_POST['login']))
                         <form class="register-form outer-top-xs" method="post">
                             <div class="form-group">
                                 <label class="info-title" for="exampleInputEmail1">Email Address <span>*</span></label>
-                                <input type="email" name="email" class="form-control unicase-form-control text-input"
+                                <input type="email" name="email" required class="form-control unicase-form-control text-input"
                                     id="exampleInputEmail1">
                             </div>
                             <div class="form-group">
                                 <label class="info-title" for="exampleInputPassword1">Password <span>*</span></label>
-                                <input type="password" name="password"
+                                <input type="password" required name="password"
                                     class="form-control unicase-form-control text-input" id="exampleInputPassword1">
                             </div>
                             <span style="font-weight:bolder">
