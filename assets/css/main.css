@@ -5198,3 +5198,7 @@ a {
 .body-content .sign-in-page .register-form .form-group {
   margin-bottom: 25px;
 }
+.product-image img {
+	object-fit: cover;
+	max-width: 250px;
+}
