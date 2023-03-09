@@ -5079,3 +5079,8 @@ input[type="checkbox"]:checked + label:before{
   #main-navigation>ul { display: none }
   
 }
+
+.product-image img {
+	object-fit: cover;
+	max-width: 250px;
+}
