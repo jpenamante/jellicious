@@ -26,17 +26,17 @@ try {
     //Server settings
     $mail->SMTPDebug = 2; //Enable verbose debug output
     $mail->isSMTP();  //Send using SMTP
-    $mail->Host       = 'smtp.gmail.com';  //Set the SMTP server to send through
+    $mail->Host       = 'smtp.hostinger.com';  //Set the SMTP server to send through
     $mail->SMTPAuth   = true; //Enable SMTP authentication
-    $mail->Username   = 'jellicious.noreply@gmail.com'; //SMTP username
-    $mail->Password   = 'bhmzwhqrpjktvxwr';                               //SMTP password
+    $mail->Username   = 'noreply@jellicious.empatechph.com'; //SMTP username
+    $mail->Password   = 'Bwwehezdzjyzxzgs123.';                               //SMTP password
     $mail->SMTPSecure = 'tls';   //Enable implicit TLS encryption
     $mail->Port       = 587;   //TCP port to connect to; use 587 if you have set SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS
 
     //Recipients
-    $mail->setFrom('jellicious.noreply@gmail.com');
+    $mail->setFrom('noreply@jellicious.empatechph.com');
     $mail->addAddress($email);     //Add a recipient             //Name is optional
-    $mail->addReplyTo('jellicious.noreply@gmail.com');
+    $mail->addReplyTo('noreply@jellicious.empatechph.com');
 
     //Content
     $mail->isHTML(true);                                  //Set email format to HTML
