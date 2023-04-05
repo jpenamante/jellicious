@@ -155,7 +155,7 @@ while($row=mysqli_fetch_array($query))
                                                 <?php
                                                 $actionResults = mysqli_query($con, "select * from ordertrackhistory where orderId = " . htmlentities($row['orderid']) . " order by id desc");
                                                 $actionRow = mysqli_fetch_array($actionResults);
-                                                if (strtolower($actionRow['status']) != 'delivered') {
+                                                if (strtolower($actionRow['status']) != 'delivered') { echo "<center><p> " . ucwords(@$actionRow['status'] ?? 'Not Processed') . "</p><center>"; 
                                                 ?>
                                                 <a href="javascript:void(0);"
                                                     onClick="popUpWindow('track-order.php?oid=<?php echo htmlentities($row['orderid']);?>');"

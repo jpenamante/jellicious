@@ -176,8 +176,8 @@ $st='Delivered';
         <div id="timer"></div>
         <?php if ($isProcessed == true) {?>
         <form style="text-align: center; margin: 1em;" method=post 
-                            onsubmit="return confirm('Are you sure you want to received your item?');">>
-            <input type=hidden name=orderid value='<?php echo $oid ?>'>
+                            onsubmit="return confirm('Are you sure you want to received your item?');">
+            <input type=hidden name=orderid value='<?php echo $oid ?>'/>
             <input type=hidden name=status value='Delivered'>
             <input type=hidden name=remarks value='Received By Customer'>
             <input type=submit value=Received name=delivered>
