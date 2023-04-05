@@ -92,8 +92,10 @@ else{
                                     <!-- panel-body  -->
                                     <div class="panel-body">
                                         <form name="payment" method="post">
-                                            <input type="radio" name="paymethod" value="COD" checked="checked">
-                                            COD<br />
+                                            <input id="COD" type="radio" name="paymethod" value="COD" checked="checked">
+                                            <label for="COD">COD</label> &nbsp; &nbsp; &nbsp;
+                                            <input id=GCash type="radio" name="paymethod" value="GCash" >
+                                            <label for="GCash">GCash</label><br /><br />
                                             <input type="submit" value="submit" name="submit" class="btn btn-primary">
 
 

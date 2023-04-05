@@ -73,20 +73,10 @@ else{
     <header class="header-style-1">
         <?php include('includes/top-header.php');?>
         <?php include('includes/main-header.php');?>
-        <?php include('includes/menu-bar.php');?>
     </header>
-    <div class="breadcrumb">
-        <div class="container">
-            <div class="breadcrumb-inner">
-                <ul class="list-inline list-unstyled">
-                    <li><a href="#">Home</a></li>
-                    <li class='active'>Shopping Cart</li>
-                </ul>
-            </div><!-- /.breadcrumb-inner -->
-        </div><!-- /.container -->
-    </div><!-- /.breadcrumb -->
+    
 
-    <div class="body-content outer-top-xs">
+    <div class="body-content">
         <div class="container">
             <div class="row inner-bottom-sm">
                 <div class="shopping-cart">
@@ -103,8 +93,8 @@ else{
 
                                             <th class="cart-qty item">Quantity</th>
                                             <th class="cart-sub-total item">Price Per unit</th>
-                                            <th class="cart-sub-total item">Shiping Charge</th>
-                                            <th class="cart-total">Grandtotal</th>
+                                            <th class="cart-sub-total item">Delivery Fee</th>
+                                            <th class="cart-total">Grand Total</th>
                                             <th class="cart-total item">Payment Method</th>
                                             <th class="cart-description item">Order Date</th>
                                             <th class="cart-total last-item">Action</th>
@@ -125,7 +115,7 @@ while($row=mysqli_fetch_array($query))
                                             <td><?php echo $cnt;?></td>
                                             <td class="cart-image">
                                                 <a class="entry-thumbnail" href="detail.html">
-                                                    <img src="admin/productimages/<?php echo $row['proid'];?>/<?php echo $row['pimg1'];?>"
+                                                    <img src="admin/productimages/<?php echo $row['c'];?>/<?php echo $row['pimg1'];?>"
                                                         alt="" width="84" height="146">
                                                 </a>
                                             </td>
@@ -164,7 +154,7 @@ while($row=mysqli_fetch_array($query))
                                         <?php } else {?>
                                         <tr>
                                             <td colspan="10" align="center">
-                                                <h4>No Result Found</h4>
+                                                <h4>No Results Found</h4>
                                             </td>
                                         </tr>
                                         <?php } ?>

@@ -72,7 +72,6 @@ $num1 = $rt ? mysqli_num_rows($rt) : 0;
                                 <li><a href="insert-product.php"><i class="menu-icon icon-paste"></i>Add Product </a></li>
                                 <li><a href="manage-products.php"><i class="menu-icon icon-table"></i>Manage Products </a></li>
 								<li><a href="earnings.php"><i class="menu-icon icon-table"></i>Earnings </a></li>
-								<li><a href="message.php"><i class="menu-icon icon-table"></i>Messages </a></li>
                             </ul><!--/.widget-nav-->
 
 						<ul class="widget widget-menu unstyled">

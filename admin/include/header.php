@@ -1,3 +1,4 @@
+<?php date_default_timezone_set('Asia/Hong_Kong'); ?>
 <div class="navbar navbar-fixed-top">
 		<div class="navbar-inner">
 			<div class="container">
@@ -5,7 +6,7 @@
 					<i class="icon-reorder shaded"></i>
 				</a>
 
-			  	<a class="brand" href="index.html">
+			  	<a class="brand" href="index.php">
 
 			  	</a>
 

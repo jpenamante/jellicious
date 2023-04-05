@@ -49,7 +49,7 @@ else{
 
 
 mysqli_query($con,"insert into orders(userId,productId,quantity) values('".$_SESSION['id']."','$qty','$val34')");
-header('location:bill-ship-addresses2.php');
+header('location:shipping-addresses2.php');
 }
 }
 }
@@ -123,7 +123,7 @@ header('location:bill-ship-addresses2.php');
         </div><!-- /.container -->
     </div><!-- /.breadcrumb -->
 
-    <div class="body-content outer-top-xs">
+    <div class="body-content">
         <div class="container">
             <div class="row inner-bottom-sm">
                 <div class="shopping-cart">
@@ -144,10 +144,9 @@ if(!empty($_SESSION['cart'])){
                                             <th class="cart-qty item" style="font-weight: lighter;">Quantity</th>
                                             <th class="cart-sub-total item" style="font-weight: lighter;">Price Per unit
                                             </th>
-                                            <th class="cart-sub-total item" style="font-weight: lighter;">Shipping
-                                                Charge</th>
+                                            <th class="cart-sub-total item" style="font-weight: lighter;">Delivery Fee</th>
                                             <th class="cart-sub-total item" style="font-weight: lighter;">Subtotal</th>
-                                            <th class="cart-total last-item" style="font-weight: lighter;">Grandtotal
+                                            <th class="cart-total last-item" style="font-weight: lighter;">Grand Total
                                             </th>
                                         </tr>
                                     </thead><!-- /thead -->
@@ -268,7 +267,7 @@ $_SESSION['pid']=$pdtid;
                                 <tr>
                                     <th>
                                         <span style="color: black; font-weight: lighter;"
-                                            class="estimate-title">Shipping Address</span>
+                                            class="estimate-title">Delivery Address</span>
                                     </th>
                                 </tr>
                             </thead>
@@ -296,33 +295,7 @@ while ($rt=mysqli_fetch_array($qry)) {
 
                     <div class="col-md-4 col-sm-12 estimate-ship-tax">
                         <table class="table table-bordered">
-                            <thead>
-                                <tr>
-                                    <th>
-                                        <span style="color: black; font-weight: lighter;" class="estimate-title">Billing
-                                            Address</span>
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr style="color: black; font-weight: lighter;">
-                                    <td>
-                                        <div class="form-group">
-                                            <?php $qry=mysqli_query($con,"select * from users where id='".$_SESSION['id']."'");
-while ($rt=mysqli_fetch_array($qry)) {
-	echo htmlentities($rt['billingAddress'])."<br />";
-	echo htmlentities($rt['billingCity'])."<br />";
-	echo htmlentities($rt['billingState']);
-	echo htmlentities($rt['billingPincode']);
-}
-
-						?>
-
-                                        </div>
-
-                                    </td>
-                                </tr>
-                            </tbody><!-- /tbody -->
+                            
                         </table><!-- /table -->
                     </div>
                     <div class="col-md-4 col-sm-12 cart-shopping-total">

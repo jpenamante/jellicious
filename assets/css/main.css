@@ -4098,7 +4098,6 @@ a {
   .top-bar .header-top-inner .cnt-account {
     clear: both;
     display: inline-block;
-    float: none;
     margin: auto;
     text-align: center;
   }
@@ -5201,4 +5200,7 @@ a {
 .product-image img {
 	object-fit: cover;
 	max-width: 250px;
+}
+h1, h2, h3, h4, h5, p, span {
+  font-family: 'FjallaOneRegular';
 }

@@ -64,7 +64,7 @@ else{
 
     <header class="header-style-1">
         <?php include('includes/top-header.php');?>
-
+        <?php include('includes/main-header.php');?>
     </header>
     <?php $query=mysqli_query($con,"select products.productPrice as pprice, products.shippingCharge as shippingcharge, orders.id as orderid from orders join products on orders.productId=products.id where orders.userId='".$_SESSION['id']."' and orders.paymentMethod is not null");
 
@@ -89,7 +89,7 @@ $shippcharge = $rows['shippingcharge'];
     </div><!-- /.breadcrumb -->
     <?php  ?>
 
-    <div class="body-content outer-top-xs">
+    <div class="body-content">
         <div class="container">
             <div class="row inner-bottom-sm">
                 <div class="shopping-cart">
@@ -102,26 +102,25 @@ $shippcharge = $rows['shippingcharge'];
                                         <tr style="">
                                             <th class="cart-romove item" style="font-weight: lighter;">#</th>
                                             <th class="cart-description item" style="font-weight: lighter;">Image</th>
-                                            <th class="cart-product-name item" style="font-weight: lighter;">Product
-                                                Name</th>
 
                                             <th class="cart-qty item" style="font-weight: lighter;">Quantity</th>
                                             <th class="cart-sub-total item" style="font-weight: lighter;">Price Per unit
                                             </th>
-                                            <th class="cart-sub-total item" style="font-weight: lighter;">Shipping
-                                                Charge</th>
-                                            <th class="cart-total item" style="font-weight: lighter;">Grandtotal</th>
+                                            <th class="cart-sub-total item" style="font-weight: lighter;">Delivery Fee
+                                            </th>
+                                            <th class="cart-total item" style="font-weight: lighter;">Grand Total</th>
                                             <th class="cart-total item" style="font-weight: lighter;">Payment Method
                                             </th>
                                             <th class="cart-description item" style="font-weight: lighter;">Order Date
                                             </th>
-                                            <th class="cart-total last-item" style="font-weight: lighter;">Action</th>
+                                            <th class="cart-total last-item" style="font-weight: lighter;">Action/
+                                                Status</th>
                                         </tr>
                                     </thead><!-- /thead -->
 
                                     <tbody>
 
-                                        <?php $query=mysqli_query($con,"select products.productImage1 as pimg1,products.productName as pname,products.id as proid,orders.productId as opid,orders.quantity as qty,products.productPrice as pprice,products.shippingCharge as shippingcharge,orders.paymentMethod as paym,orders.orderDate as odate,orders.id as orderid from orders join products on orders.productId=products.id where orders.userId='".$_SESSION['id']."' and orders.paymentMethod is not null");
+                                        <?php $query=mysqli_query($con,"select products.productImage1 as pimg1,products.productName as pname,products.id as proid,orders.productId as opid,orders.quantity as qty,products.productPrice as pprice,products.shippingCharge as shippingcharge,orders.paymentMethod as paym,orders.orderDate as odate,orders.id as orderid, orders.transaction_code from orders join products on orders.productId=products.id where orders.userId='".$_SESSION['id']."' and orders.paymentMethod is not null order by orders.id desc ");
 $cnt=1;
 while($row=mysqli_fetch_array($query))
 {
@@ -129,17 +128,14 @@ while($row=mysqli_fetch_array($query))
                                         <tr style="">
                                             <td><?php echo $cnt;?></td>
                                             <td class="cart-image">
-                                                <a class="entry-thumbnail" href="detail.html">
+                                                <a class="entry-thumbnail"
+                                                    href="product-details.php?pid=<?php echo $row['proid'];?>">
                                                     <img src="admin/productimages/<?php echo $row['proid'];?>/<?php echo $row['pimg1'];?>"
-                                                        alt="" width="84" height="146">
+                                                        alt="" width="auto" height="130">
                                                 </a>
-                                            </td>
-                                            <td class="cart-product-name-info">
-                                                <h4 class='cart-product-description'><a style=""
+                                                <h4 class='cart-product-description' style="text-align:center;"><a
                                                         href="product-details.php?pid=<?php echo $row['opid'];?>">
                                                         <?php echo $row['pname'];?></a></h4>
-
-
                                             </td>
                                             <td class="cart-product-quantity">
                                                 <?php echo $qty=$row['qty']; ?>
@@ -150,15 +146,24 @@ while($row=mysqli_fetch_array($query))
                                                 <?php echo $shippcharge=$row['shippingcharge']; ?> </td>
                                             <td class="cart-product-grand-total">
                                                 <?php echo (($qty*$price)+$shippcharge);?></td>
-                                            <td class="cart-product-sub-total"><?php echo $row['paym']; ?> </td>
+                                            <td class="cart-product-sub-total"><?php echo $row['paym']; ?>
+                                                <?php echo (strlen($row['transaction_code']) > 0) ? ' <br/> <i>' . $row['transaction_code'] . '</i>' : ''; ?>
+                                            </td>
                                             <td class="cart-product-sub-total"><?php echo $row['odate']; ?> </td>
 
                                             <td>
+                                                <?php
+                                                $actionResults = mysqli_query($con, "select * from ordertrackhistory where orderId = " . htmlentities($row['orderid']) . " order by id desc");
+                                                $actionRow = mysqli_fetch_array($actionResults);
+                                                if (strtolower($actionRow['status']) != 'delivered') {
+                                                ?>
                                                 <a href="javascript:void(0);"
                                                     onClick="popUpWindow('track-order.php?oid=<?php echo htmlentities($row['orderid']);?>');"
                                                     title="Track order">Track</a>
                                                 <a href="cancel.php?ID=<?php echo $row['orderid'];?> "
                                                     style="color: lightblue;">Cancel</a>
+
+                                                <?php } else {echo "<strong style='color:green'>Delivered</strong>";} ?>
                                             </td>
                                         </tr>
                                         <?php $cnt=$cnt+1;} ?>
@@ -172,8 +177,6 @@ while($row=mysqli_fetch_array($query))
                 </div><!-- /.shopping-cart -->
             </div> <!-- /.row -->
             </form>
-            <!-- ============================================== BRANDS CAROUSEL ============================================== -->
-            <!-- ============================================== BRANDS CAROUSEL : END ============================================== -->
         </div><!-- /.container -->
     </div><!-- /.body-content -->
 

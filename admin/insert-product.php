@@ -176,9 +176,9 @@ while($row=mysqli_fetch_array($query))
 </div>
 
 <div class="control-group">
-<label class="control-label" for="basicinput">Product Shipping Charge</label>
+<label class="control-label" for="basicinput">Product Delivery Fee</label>
 <div class="controls">
-<input type="text"    name="productShippingcharge"  placeholder="Enter Product Shipping Charge" class="span8 tip" required>
+<input type="text"    name="productShippingcharge"  placeholder="Enter Product Delivery Fee" class="span8 tip" required>
 </div>
 </div>
 

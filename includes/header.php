@@ -12,6 +12,7 @@
 		}
 	}
 ?>
+<?php date_default_timezone_set('Asia/Hong_Kong'); ?>
 <div class="main-header">
     <div class="container">
         <div class="row">

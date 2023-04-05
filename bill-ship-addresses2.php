@@ -32,7 +32,7 @@ echo "<script>alert('Billing Address has been updated');</script>";
 		$query=mysqli_query($con,"update users set shippingAddress='$saddress',shippingState='$sstate',shippingCity='$scity',shippingPincode='$spincode' where id='".$_SESSION['id']."'");
 		if($query)
 		{
-echo "<script>alert('Shipping Address has been updated');</script>";
+echo "<script>alert('Delivery Address has been updated');</script>";
 		}
 	}
 
@@ -187,7 +187,7 @@ while($row=mysqli_fetch_array($query))
                                     <h4 class="unicase-checkout-title">
                                         <a data-toggle="collapse" class="collapsed" data-parent="#accordion"
                                             href="#collapseTwo">
-                                            <span>2</span>Shipping Address
+                                            <span>2</span>Delivery Address
                                         </a>
                                     </h4>
                                 </div>

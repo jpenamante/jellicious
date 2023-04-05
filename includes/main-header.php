@@ -15,7 +15,7 @@ if (isset($_Get['action'])) {
 <div class="main-header">
     <div class="container">
         <div class="row">
-            <div class="col-xs-10 col-sm-10 col-md-4 top-search-holder">
+            <div class="col-xs-12 col-sm-12 col-md-4 top-search-holder">
                 <div class="search-area" style="background-color: white; border-color: gray;">
                     <form name="search" method="post" action="search-result.php">
                         <div class="control-group">

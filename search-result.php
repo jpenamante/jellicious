@@ -97,7 +97,7 @@ header('location:my-wishlist.php');
 
     </header>
     </div><!-- /.breadcrumb -->
-    <div class="body-content outer-top-xs">
+    <div class="body-content">
         <div class='container'>
             <div class='row outer-bottom-sm'>
                 <div class='col-md-3 sidebar'>

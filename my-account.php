@@ -104,20 +104,10 @@ else
 <body class="cnt-home">
     <header class="header-style-1">
         <?php include('includes/top-header.php');?>
-
-
+        <?php include('includes/main-header.php');?>
     </header>
-    <div class="breadcrumb">
-        <div class="container">
-            <div class="breadcrumb-inner">
-                <ul class="list-inline list-unstyled">
-                    <li class='active'></li>
-                </ul>
-            </div><!-- /.breadcrumb-inner -->
-        </div><!-- /.container -->
-    </div><!-- /.breadcrumb -->
 
-    <div class="body-content outer-top-bd">
+    <div class="body-content">
         <div class="container">
             <div class="checkout-box inner-bottom-sm">
                 <div class="row">

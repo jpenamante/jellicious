@@ -95,7 +95,7 @@ if(isset($_POST['submit']))
 
     </header>
 
-    <!-- ============================================== HEADER : END ============================================== -->
+    
     <div class="breadcrumb">
         <div class="container">
             <div class="breadcrumb-inner">
@@ -110,7 +110,7 @@ if(isset($_POST['submit']))
             </div><!-- /.breadcrumb-inner -->
         </div><!-- /.container -->
     </div><!-- /.breadcrumb -->
-    <div class="body-content outer-top-xs">
+    <div class="body-content">
         <div class='container'>
             <div class='row single-product outer-bottom-sm '>
 
@@ -276,7 +276,7 @@ $num=mysqli_num_rows($rt);
                                     <div class="row">
                                         <div class="col-sm-3">
                                             <div class="stock-box">
-                                                <span style="color: black;" class="label">Shipping Charge :</span>
+                                                <span style="color: black;" class="label">Delivery Fee :</span>
                                             </div>
                                         </div>
                                         <div class="col-sm-9">

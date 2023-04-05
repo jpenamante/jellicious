@@ -72,7 +72,7 @@ include('includes/config.php');
         </div><!-- /.container -->
     </div><!-- /.breadcrumb -->
 
-    <div class="body-content outer-top-xs">
+    <div class="body-content">
         <div class="container">
             <div class="row inner-bottom-sm">
                 <div class="shopping-cart">
@@ -89,7 +89,7 @@ include('includes/config.php');
 
                                             <th class="cart-qty item">Quantity</th>
                                             <th class="cart-sub-total item">Price Per unit</th>
-                                            <th class="cart-total item">Grandtotal</th>
+                                            <th class="cart-total item">Grand Total</th>
                                             <th class="cart-total item">Payment Method</th>
                                             <th class="cart-description item">Order Date</th>
                                             <th class="cart-total last-item">Action</th>
