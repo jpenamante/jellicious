@@ -292,11 +292,6 @@ if (isset($_GET['action']) && $_GET['action'] == "add") {
 				</div>
 			</div>
 		</div>
-		<center><h1>You want to know where we are located?</h1></center>
-		<div id='map'></div>
-		<script src="./app.js" defer></script>
-		<script src='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
-		<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.js"></script>
 		<?php include('includes/footer.php'); ?>
 
 		<script src="assets/js/jquery-1.11.1.min.js"></script>

@@ -97,6 +97,7 @@ $st='Delivered';
       <td  class="fontkink"><span class="fontkink1" >
         <select name="status" class="fontkink" required="required" >
           <option value="">Select Status</option>
+                 <option value="ready for delivery">Ready for Delivery</option>
                  <option value="in Process">In Process</option>
                   <option value="Delivered">Delivered</option>
         </select>
@@ -106,7 +107,7 @@ $st='Delivered';
      <tr style=''>
       <td class="fontkink1" >Remark:</td>
       <td class="fontkink" align="justify" ><span class="fontkink">
-        <textarea cols="50" rows="7" name="remark"  required="required" ></textarea>
+        <textarea cols="50" rows="7" name="remark" ></textarea>
         </span></td>
     </tr>
     <tr>

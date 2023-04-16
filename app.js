@@ -12,6 +12,8 @@ function errorLocation() {
 }
 
 function setupMap(center) {
+	const address = $('#map').data('map');
+	console.log(address)
 	const map = new mapboxgl.Map({
 		container: 'map',
 		style: 'mapbox://styles/mapbox/streets-v11',
@@ -27,6 +29,6 @@ function setupMap(center) {
 		map.on('load',  function() {
 			directions.setOrigin('12 Resurreccion Street, Sta Ana 1850 San Mateo, Philippines'); 
 			
-			directions.setDestination(center); 
+			directions.setDestination(address); 
 		})
 }

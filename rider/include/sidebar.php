@@ -13,8 +13,8 @@
                 <ul id="togglePages" class="unstyled in collapse">
 
                     <li>
-                        <a href="todays-orders.php">
-                            <i class="icon-tasks"></i>Today's Orders
+                        <a href="ready-for-pickup-orders.php">
+                            <i class="icon-tasks"></i>Ready for Pickup Orders
                             <?php
 					$f1="00:00:00";
 					$from=date('Y-m-d')." ".$f1;
@@ -26,19 +26,6 @@
 					?>
 
                             <b class="label orange pull-right"><?php echo htmlentities($num_rows1); ?></b>
-                            <?php } ?>
-                        </a>
-                    </li>
-                    <li>
-
-                        <a href="pending-orders.php">
-                            <i class="icon-tasks"></i>
-                            Pending Orders
-                            <?php	
-												$status='Delivered';									 
-											$ret = mysqli_query($con,"SELECT * FROM Orders where orderStatus!='$status' || orderStatus is null ");
-											$num = $ret ? mysqli_num_rows($ret) : 0;
-											{?><b class="label orange pull-right"><?php echo htmlentities($num); ?></b>
                             <?php } ?>
                         </a>
                     </li>

@@ -82,7 +82,42 @@ echo "<script>alert('Delivery Address has been updated');</script>";
     <link rel="stylesheet" href="assets/css/font-awesome.min.css">
     <link href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,700' rel='stylesheet' type='text/css'>
     <link rel="shortcut icon" href="assets/images/favicon.ico">
+	<link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
+	<link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.css" type="text/css" />
+    <style>
+        
+        #map {
+            width: 70%;
+            height: 500px;
+            margin:auto;
+        }
+        
+        .complex-container {
+            padding: 20px 40px;
+            display: flex;
+            height: 70vh;
+        }
 
+        .complex-container p,
+        h1 {
+            margin-bottom: 10px;
+        }
+
+        .complex-container>div {
+            border: 3 solid #ccc;
+        }
+
+        .complex-container .pbold {
+            font-weight: bold;
+        }
+
+        .content-1 {
+            flex: 1;
+            margin-top: 200px;
+            margin-left: 100px;
+        }
+
+    </style>
 </head>
 
 <body class="cnt-home" style=";">
@@ -147,6 +182,18 @@ echo "<script>alert('Delivery Address has been updated');</script>";
 
         </div>
     </div>
+    <!-- <?php
+        $query=mysqli_query($con,"select * from users where id='".$_SESSION['id']."'");
+        while($row=mysqli_fetch_array($query))
+        {
+        ?>
+        <div id='map' data-map = "<?php echo $row['shippingAddress'] . ' ' . $row['shippingState']. ' ' . $row['shippingCity']. ' ' . $row['shipshippingPincodepingCity'];?><"></div>
+    <?php
+        }
+        ?> -->
+    <script src="./app.js" defer></script>
+		<script src='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
+		<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.js"></script>
     <?php include('includes/footer.php');?>
     <script src="assets/js/jquery-1.11.1.min.js"></script>
 
