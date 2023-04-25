@@ -1,4 +1,4 @@
-<?php date_default_timezone_set('Asia/Hong_Kong'); ?>
+<?php date_default_timezone_set('Asia/Hong_Kong'); ini_set('display_errors', 0);?>
 <style>
 	/* The Modal (background) */
 	.modal {
