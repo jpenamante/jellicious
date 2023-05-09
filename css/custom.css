@@ -1,0 +1,29 @@
+
+
+.about-us-section {
+	display: flex;
+	flex-direction: column;
+}
+
+.about-us-section .recognitions ~ ul {
+	list-style: disc;
+	margin-left: 3rem;
+}
+
+.footer .links-social, .footer .links-social .contact-info .about-us {
+	margin-bottom: 0;
+}
+
+.contact-info .module-body  {
+	display: flex;
+}
+
+.contact-info .module-body .about-us {
+	align-self: center;
+}
+
+.contact-info .module-body .footer-details {
+	font-size: 14px;
+	align-self: center;
+    text-align-last: right;
+}

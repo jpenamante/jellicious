@@ -23,6 +23,7 @@
                     <li><a href="order-history.php"><i class="icon fa fa-book"></i>Orders</a></li>
                     <li><a href="logout.php"><i class="icon fa fa-sign-out"></i>Logout</a></li>
                     <?php } ?>
+                    
                 </ul>
             </div>
 

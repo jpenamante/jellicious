@@ -70,6 +70,7 @@ if (isset($_GET['action']) && $_GET['action'] == "add") {
 
 	<link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
 	<link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.css" type="text/css" />
+	<link rel="stylesheet" href="css/custom.css">
 
 
 </head>
@@ -147,7 +148,6 @@ if (isset($_GET['action']) && $_GET['action'] == "add") {
 									<?php
 									$ret = mysqli_query($con, "select * from products");
 									while ($row = mysqli_fetch_array($ret)) {
-										# code...
 									?>
 										<div class="item item-carousel">
 											<div class="products">
@@ -161,8 +161,6 @@ if (isset($_GET['action']) && $_GET['action'] == "add") {
 
 
 													</div><!-- /.product-image -->
-
-
 													<div class="product-info text-left">
 														<h3 class="name"><a style="color: black; font-weight: lighter;" href="product-details.php?pid=<?php echo htmlentities($row['id']); ?>"><?php echo htmlentities($row['productName']); ?></a></h3>
 														<div class="rating rateit-small"></div>
@@ -186,111 +184,44 @@ if (isset($_GET['action']) && $_GET['action'] == "add") {
 								</div><!-- /.home-owl-carousel -->
 							</div><!-- /.product-slider -->
 						</div>
-
-
-
-
-						<div class="tab-pane" id="books">
-							<div class="product-slider">
-								<div class="owl-carousel home-owl-carousel custom-carousel owl-theme">
-									<?php
-									$ret = mysqli_query($con, "select * from products where category=3");
-									while ($row = mysqli_fetch_array($ret)) {
-										# code...
-
-
-									?>
-
-										<div class="item item-carousel">
-											<div class="products">
-
-												<div class="product">
-													<div class="product-image">
-														<div class="image">
-															<a href="product-details.php?pid=<?php echo htmlentities($row['id']); ?>">
-																<img src="admin/productimages/<?php echo htmlentities($row['id']); ?>/<?php echo htmlentities($row['productImage1']); ?>" data-echo="admin/productimages/<?php echo htmlentities($row['id']); ?>/<?php echo htmlentities($row['productImage1']); ?>"height="300" alt=""></a>
-														</div><!-- /.image -->
-
-
-													</div><!-- /.product-image -->
-
-
-													<div class="product-info text-left">
-														<h3 class="name"><a href="product-details.php?pid=<?php echo htmlentities($row['id']); ?>"><?php echo htmlentities($row['productName']); ?></a></h3>
-														<div class="rating rateit-small"></div>
-														<div class="description"></div>
-
-														<div class="product-price">
-															<span class="price">
-																Php <?php echo htmlentities($row['productPrice']); ?> </span>
-															<span class="price-before-discount">Php<?php echo htmlentities($row['productPriceBeforeDiscount']); ?></span>
-
-														</div><!-- /.product-price -->
-
-													</div><!-- /.product-info -->
-													<div class="action"><a href="index.php?page=product&action=add&id=<?php echo $row['id']; ?>" class="lnk btn btn-primary">Add to Cart</a></div>
-												</div><!-- /.product -->
-
-											</div><!-- /.products -->
-										</div><!-- /.item -->
-									<?php } ?>
-
-
-								</div><!-- /.home-owl-carousel -->
-							</div><!-- /.product-slider -->
-						</div>
-
-
-						<div class="tab-pane" id="furniture">
-							<div class="product-slider">
-								<div class="owl-carousel home-owl-carousel custom-carousel owl-theme">
-									<?php
-									$ret = mysqli_query($con, "select * from products where category=5");
-									while ($row = mysqli_fetch_array($ret)) {
-									?>
-
-
-										<div class="item item-carousel">
-											<div class="products">
-
-												<div class="product">
-													<div class="product-image">
-														<div class="image">
-															<a href="product-details.php?pid=<?php echo htmlentities($row['id']); ?>">
-																<img src="admin/productimages/<?php echo htmlentities($row['id']); ?>/<?php echo htmlentities($row['productImage1']); ?>" data-echo="admin/productimages/<?php echo htmlentities($row['id']); ?>/<?php echo htmlentities($row['productImage1']); ?>"height="300" alt=""></a>
-														</div>
-
-
-													</div>
-
-
-													<div class="product-info text-left">
-														<h3 class="name"><a href="product-details.php?pid=<?php echo htmlentities($row['id']); ?>"><?php echo htmlentities($row['productName']); ?></a></h3>
-														<div class="rating rateit-small"></div>
-														<div class="description"></div>
-
-														<div class="product-price">
-															<span class="price">
-																Php<?php echo htmlentities($row['productPrice']); ?> </span>
-															<span class="price-before-discount">Php<?php echo htmlentities($row['productPriceBeforeDiscount']); ?></span>
-
-														</div>
-
-													</div>
-													<div class="action"><a href="index.php?page=product&action=add&id=<?php echo $row['id']; ?>" class="lnk btn btn-primary">Add to Cart</a></div>
-												</div>
-
-											</div>
-										</div>
-									<?php } ?>
-
-
-								</div>
-							</div>
-						</div>
 					</div>
 				</div>
-			</div>
+				</div>
+				
+				<div class="about-us-section" style="font-weight: lighter;">
+					<h3 class="pull-left" style="color: black; font-weight: lighter;">About Jellicious Frappe</h3>
+					<br/>
+					<p>
+					Products we offer are made using fresh and high quality ingredients. We aim to spread the goodness of our creations throughout the country as we open our business for franchise.
+ESTABLISHED, 2019</p>
+
+				   <h4 class="recognitions"> <i class="icon fa fa-envelope"></i> Recognitions</h4>
+				   <ul>
+						 <li>40th People's Choice</li>
+						 <li>Netizen's Best Choice Awards</li>
+						 <li>8th Elite Business & Leadership Awards</li>
+						 <li>Golden Globe Annual Awards For Business Excellence</li>
+						 <li>Asian Sterling Awards 2022</li>
+				   </ul>
+				   
+				   <h4 class="branches"> <i class="icon fa fa-map-marker"></i> Branches</h4>
+				   <ul>
+				   		<li>Jellicious Frappe - San Mateo, Rizal (main)</li>
+						<li>Jellicious Frappe - Rodriguez, Rizal</li>
+						<li>Jellicious Frappe - Tanay, Rizal</li>
+						<li>Jellicious Frappe - Cainta, Rizal</li>
+						<li>Jellicious Frappe - Antipolo, Rizal</li>
+						<li>Jellicious Frappe - Tandang Sora, QC</li>
+						<li>Jellicious Frappe - North Fairview, QC</li>
+						<li>Jellicious Frappe - Malanday, Marikina</li>
+						<li>Jellicious Frappe - Angeles, Pampanga</li>
+						<li>Jellicious Frappe - Bambang, Pasig</li>
+						<li>Jellicious Frappe - Sta Maria, Bulacan</li>
+						<li>Jellicious Frappe - Sampaloc, Manila</li>
+				   </ul>
+
+
+				</div>
 		</div>
 		<?php include('includes/footer.php'); ?>
 
